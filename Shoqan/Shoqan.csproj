@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FB54F10-5403-4D24-B1F5-B80C395BE739}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Shoqan</RootNamespace>
+    <AssemblyName>Shoqan</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\Layer.cs" />
+    <Compile Include="FitHistory.cs" />
+    <Compile Include="IActivation.cs" />
+    <Compile Include="ICallback.cs" />
+    <Compile Include="ILayer.cs" />
+    <Compile Include="ILossFunction.cs" />
+    <Compile Include="IMetric.cs" />
+    <Compile Include="IModel.cs" />
+    <Compile Include="IOptimizer.cs" />
+    <Compile Include="IRegularizer.cs" />
+    <Compile Include="ITensor.cs" />
+    <Compile Include="IWeights.cs" />
+    <Compile Include="Layers\Dense.cs" />
+    <Compile Include="Layers\Dropout.cs" />
+    <Compile Include="Layers\Input.cs" />
+    <Compile Include="Losses\DefaultLosses.cs" />
+    <Compile Include="Losses\MeanSquaredErrorLoss.cs" />
+    <Compile Include="Models\FlowModel.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Optimizers\DefaultOptimizers.cs" />
+    <Compile Include="Optimizers\Optimizer.cs" />
+    <Compile Include="Optimizers\SGD.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TensorFlow\DType.cs" />
+    <Compile Include="TensorFlow\Graph.cs" />
+    <Compile Include="TensorFlow\GraphHelper.cs" />
+    <Compile Include="TensorFlow\GraphProvider.cs" />
+    <Compile Include="TensorFlow\OperationBuilderHelper.cs" />
+    <Compile Include="TensorFlow\Operations\ArrayOperations.cs" />
+    <Compile Include="TensorFlow\Operations\MathOperations.cs" />
+    <Compile Include="TensorFlow\NameScope.cs" />
+    <Compile Include="TensorFlow\NativeHandle.cs" />
+    <Compile Include="TensorFlow\Operation.cs" />
+    <Compile Include="TensorFlow\OperationBuilder.cs" />
+    <Compile Include="TensorFlow\Operations\RandomOperations.cs" />
+    <Compile Include="TensorFlow\Operations\StateOperations.cs" />
+    <Compile Include="TensorFlow\Output.cs" />
+    <Compile Include="TensorFlow\Shape.cs" />
+    <Compile Include="TensorFlow\Status.cs" />
+    <Compile Include="TensorFlow\Tensor.cs" />
+    <Compile Include="TensorFlow\Tensorflow.cs" />
+    <Compile Include="TensorFlow\TensorFlowApi.cs" />
+    <Compile Include="TensorFlow\Variable.cs" />
+    <Compile Include="Verbosity.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
